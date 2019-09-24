@@ -19,7 +19,7 @@
 ## Built With
 
 - [Github API](https://developer.github.com/v3/) - For accessing Github user database
-- [Github Apps](https://github.com/settings/applications/new) - To allow >100 API requests per hour
+- [OAth Apps](https://github.com/settings/applications/new) - To allow >100 API requests per hour
 
 ## Contributing
 
