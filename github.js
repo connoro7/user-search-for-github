@@ -1,4 +1,10 @@
 class Github {
+  /**
+   * @param {string} client_id github oauth public key
+   * @param {string} client_secret github oauth private key
+   * @param {string} repos_count number of public repos to pull from github repo API
+   * @param {string} repos_sort display pattern for public repos pulled from github repo API
+   **/
   constructor() {
     this.client_id = '4995874354f69eb5551e';
     this.client_secret = '2adb6d3f90bed4adbbf943b5e52ce70965230d03';
