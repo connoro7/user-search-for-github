@@ -4,6 +4,7 @@ class UI {
     this.profile = document.getElementById('profile');
   }
 
+  // Print profile data
   showProfile(user) {
     // console.log(user);
     this.profile.innerHTML = `
@@ -31,5 +32,45 @@ class UI {
         <h3 class="page-heading mb-3">Latest Repos</h3>
         <div id="repos"></div>
     `;
+    //console.log('Profile Loaded');
+  }
+
+  // Show alert message
+  showAlert(message, className) {
+    // Clear any existing alerts
+    this.clearAlert();
+    // Create div
+    const div = document.createElement('div');
+    // Add classes
+    div.className = `${className}`;
+    // Add text
+    div.appendChild(document.createTextNode(message));
+    // Get parent
+    const container = document.querySelector('.searchContainer');
+    // Get search box
+    const search = document.querySelector('.search');
+    // Insert alert
+    container.insertBefore(div, search);
+
+    // Timeout alert after 3 seconds
+    setTimeout(() => {
+      this.clearAlert();
+    }, 2000);
+  }
+
+  // Clear alert message
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+    // check to see if any existing alert
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
+
+  // Clear profile
+  clearProfile() {
+    // When called, changes <div id="profile"> contents to contain nothing
+    this.profile.innerHTML = '';
+    //console.log('Profile Cleared');
   }
 }
