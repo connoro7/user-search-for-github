@@ -22,8 +22,13 @@ class Github {
       `https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}`
     );
 
+    const repoResponse = await fetch(
+      `https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.client_id}&client_secret=${this.client_secret}`
+    );
+
     // Get profile data by storing it in profileData variable that pulls the json data from our profile response request
     const profile = await profileResponse.json();
+    const repos = await repoResponse.json();
 
     // We *could* return just profile here, but we know we're also going to want to be returning profile repo data as well, so instead let's return an object that will contain both
     // return{
@@ -33,7 +38,8 @@ class Github {
     // In ES6, if you're returning an object called "NAME" and it contains a single variable called "NAME" as well (so, they have the same name), you don't need to do return{NAME: NAME}, you can just do return{NAME}
     // So the above becomes:
     return {
-      profile
+      profile,
+      repos
     };
   }
 }
