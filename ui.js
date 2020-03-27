@@ -46,7 +46,7 @@ class UI {
             <a href="${repo.html_url}" target="_blank">${repo.name}</a>
           </div>          
           <div class="col-md-6">
-          <span class="bad badget-primary">Stars: ${repo.stargazers_count}<span>
+          <span class="badge badget-primary">Stars: ${repo.stargazers_count}<span>
             <span class="badge badge-secondary">Watchers: ${repo.watchers_count}</span>
             <span class="badge badge-success">Forks: ${repo.forks_counts}</span>
           </div>
@@ -75,7 +75,7 @@ class UI {
     // Insert alert
     container.insertBefore(div, search);
 
-    // Timeout alert after 3 seconds
+    // Timeout alert after 2 seconds
     setTimeout(() => {
       this.clearAlert();
     }, 2000);
